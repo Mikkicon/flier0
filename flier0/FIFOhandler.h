@@ -3,6 +3,7 @@
 #ifndef FIFOHANDLER_H_
 #define FIFOHANDLER_H_
 #include "TAVProperty.h"
+template <typename T>
 class FIFOhandler
 {
 private:
@@ -23,10 +24,10 @@ private:
 	*/
 public:
 	FIFOhandler();
-
+	void setProp(const std::string &, T &);
+	T & getProp(const std::string &);
 	virtual ~FIFOhandler();
 };
-
 
 
 #endif /* FIFOHANDLER_H_ */

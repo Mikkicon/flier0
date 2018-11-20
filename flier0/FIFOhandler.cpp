@@ -1,12 +1,14 @@
 #include "pch.h"
 #include "FIFOhandler.h"
 
-
-FIFOhandler::FIFOhandler()
+template<typename T>
+void FIFOhandler<T>::setProp(const std::string &s, T & x)
 {
+	
 }
 
-
-FIFOhandler::~FIFOhandler()
+template<typename T>
+T & FIFOhandler<T>::getProp(const std::string &s)
 {
+	// TODO: insert return statement here
 }

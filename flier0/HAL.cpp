@@ -19,7 +19,7 @@ std::map<std::string, TAVProperty<double> &> HAL::get_controls() {
 
 
 std::ostream & operator<<(std::ostream & o, const TAVProperty<double> &d) {
-	std::cout << d << std::endl;
+	//std::cout << d.getName() << std::endl;
 	return o;
 }
 /*int main()

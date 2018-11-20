@@ -11,7 +11,7 @@ private:
 	std::string _name = "";
 public:
 	TAVProperty(T x);
-	TAVProperty(std::string & const);
+	TAVProperty(const std::string &);
 	virtual ~TAVProperty();
 	TAVProperty<T>& operator<<(const T&);
 	const std::string & getName()const;
@@ -23,12 +23,10 @@ template<typename T>
 TAVProperty<T>::~TAVProperty(){};
 
 template<typename T>
-TAVProperty<T>::TAVProperty(std::string & const s) {
+TAVProperty<T>::TAVProperty(const std::string & s) {
 	size_t x = s.find("=");
-	std::string s1 = s.substr(0, x);
-	std::string s2 = s.substr(x + 1);
-	_name = s2;
-	std::cout << s2 << s1 << x << _name << std::endl;
+	_name = s.substr(++x);
+	std::cout << _name << std::endl;
 }
 
 
