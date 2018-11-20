@@ -2,7 +2,8 @@
 #include "TAVProperty.h"
 #include <iostream>
 
-TAVProperty<double>::TAVProperty(std::string & const s)
+template<typename T>
+TAVProperty<T>::TAVProperty(std::string & const s)
 {
 	size_t x = s.find("=");
 	std::string s1 = s.substr(0, x);
