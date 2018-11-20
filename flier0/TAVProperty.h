@@ -7,7 +7,7 @@ template <typename T>
 class TAVProperty : AVProperty
 {
 private:
-	T magic_number_1 = 0;
+	T _value = 0;
 	std::string _name = "";
 public:
 	TAVProperty(T x);
@@ -18,11 +18,18 @@ public:
 };
 
 template<typename T>
-TAVProperty<T>::TAVProperty(T x) {
-	T y = magic_number_1;
-}
+TAVProperty<T>::TAVProperty(T x) : _value(x) {};
 template<typename T>
-TAVProperty<T>::TAVProperty(std::string & const s);
+TAVProperty<T>::~TAVProperty(){};
+
+template<typename T>
+TAVProperty<T>::TAVProperty(std::string & const s) {
+	size_t x = s.find("=");
+	std::string s1 = s.substr(0, x);
+	std::string s2 = s.substr(x + 1);
+	_name = s2;
+	std::cout << s2 << s1 << x << _name << std::endl;
+}
 
 
 #endif //FLIER0_TAVPROPERTY_H
